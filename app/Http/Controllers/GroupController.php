@@ -26,17 +26,6 @@ class GroupController extends Controller
     public function index(Request $request)
     {
 
-        $data = Group::withCount('products')->get();
-
-        $cnt = 0;
-        foreach($data as $category){
-
-            // print "<br> " . $category->id ." | ". $category->id_parent ." name: ". $category->name . ": " . $category->products_count;
-            // $cnt += $category->products_count;
-        }
-
-        // return response()->json($cnt);
-
         $categoryTree = $this->catalogService->getCategoryTree($request);
 
         $products = $this->productService->index($request, $categoryTree['ids']);
