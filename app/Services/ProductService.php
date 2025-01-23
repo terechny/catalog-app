@@ -17,11 +17,6 @@ class ProductService
         
             $query->whereIn('id_group', $categoryIds);
         }                         
-
-        if( $request->has('group') ){
-
-            $query->where('id_group', $request->group );
-        }
         
         if ( $request->has('sort_by') AND $request->has('sort_order') ) {
            

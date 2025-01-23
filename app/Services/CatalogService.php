@@ -4,7 +4,7 @@
 namespace App\Services;
 
 use Illuminate\Http\Request;
-use App\Models\group;
+use App\Models\Group;
 
 class CatalogService
 {
