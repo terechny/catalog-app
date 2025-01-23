@@ -9,6 +9,12 @@ use App\Models\Group;
 class CatalogService
 {
 
+    /**
+     * Пришлось намешать выдачу категорий и продуктов, чтобы не дублировать функции и лишний раз не обращаться к БД.
+     * Поозреваю, что можно написать более оптимальный запрос, но пока так.
+     * 
+     */
+
     public function getCategoryTree(Request $request){
 
         $mainCategory = $this->getCategoryByParent(0);
